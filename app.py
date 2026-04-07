@@ -10,7 +10,7 @@ def scrape_site(url):
             "User-Agent": "Mozilla/5.0"
         }
 
-        r = requests.get(url, headers=headers, timeout=5)
+        r = requests.get(url, headers=headers, timeout=5, verify=False)
         soup = BeautifulSoup(r.text, "html.parser")
 
         title = soup.title.text if soup.title else "No title"
